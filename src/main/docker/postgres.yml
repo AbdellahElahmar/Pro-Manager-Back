@@ -1,0 +1,10 @@
+version: '2'
+services:
+  pro-manager-postgresql:
+    image: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432:5432
