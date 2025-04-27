@@ -9,13 +9,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-@AllArgsConstructor
 public class UsersServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     @Override
     public void addNewUser(CreateUserRequest request) {
         User user = new User();
+        user.setMail(request.getEMail());
+        user.setPassword(request.getPassword());
+        userRepository.save(user);
 
 
     }
